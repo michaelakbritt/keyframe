@@ -21,10 +21,9 @@ body {
     background-color: #FFF;
     max-width: 1200px;
     width: 100%;
-    height: 100%;
+    height: 100vh; /* Use 100vh for full viewport height */
     display: inline-block;
     text-align: left;
-    height: 98vh;
 }
 
 /* Animation 1: Circle Change */
@@ -42,11 +41,7 @@ body {
     display: inline-block;
     outline: 1px solid transparent;
 
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
-    animation-name: circleChange;
-    animation-duration: 5s;
-    animation-timing-function: ease-out;
+    animation: circleChange 5s ease-out forwards;
 }
 
 @keyframes circleChange {
@@ -82,11 +77,7 @@ body {
     display: inline-block;
     outline: 1px solid transparent;
 
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-    animation-name: bounceRotate;
-    animation-duration: 4s;
-    animation-timing-function: ease-out;
+    animation: bounceRotate 4s ease-out forwards;
 }
 
 @keyframes bounceRotate {
@@ -126,11 +117,7 @@ body {
     display: inline-block;
     outline: 1px solid transparent;
 
-    animation-delay: 3s;
-    animation-fill-mode: forwards;
-    animation-name: moveScale;
-    animation-duration: 6s;
-    animation-timing-function: ease-in-out;
+    animation: moveScale 6s ease-in-out forwards;
 }
 
 @keyframes moveScale {
