@@ -1,110 +1,156 @@
-/* Basic Reset */
-* {
+body {
     margin: 0;
     padding: 0;
+    background-color: #999;
+    font-size: 40px;
+    font-family: sans-serif;
+}
+
+* {
     box-sizing: border-box;
+    margin: 0;
 }
 
-/* General Body Styling */
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-    background-color: #f8f8f8;
+.outer {
+    text-align: center;
 }
 
-/* Animation 1 */
-.animation1 {
-    width: 150px;
-    height: 150px;
-    background-color: #3498db;
-    border-radius: 50%;
-    animation: circleAnimation 4s ease-in-out infinite;
+.page {
+    position: relative;
+    margin-top: 0px;
+    background-color: #FFF;
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-align: left;
+    height: 98vh;
 }
 
-/* Animation 2 */
-.animation2 {
+/* Animation 1: Circle Change */
+.a_box {
+    text-align: center;
+    font-size: 20px;
+    color: #FFF;
+    background-color: #777;
+    padding: 20px;
     width: 200px;
     height: 200px;
+    border-radius: 100px;
+    box-sizing: border-box;
+    margin: 50px;
+    display: inline-block;
+    outline: 1px solid transparent;
+
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-name: circleChange;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes circleChange {
+    0% {
+        background-color: red;
+        border-radius: 100px;
+    }
+
+    50% {
+        background-color: green;
+        border-radius: 0px;
+        transform: translate(200px, 0px) scale(1.5, 1.5);
+    }
+
+    100% {
+        background-color: blue;
+        border-radius: 100px;
+    }
+}
+
+/* Animation 2: Bounce and Rotate */
+.b_box {
+    text-align: center;
+    font-size: 20px;
+    color: #FFF;
     background-color: #e74c3c;
-    border-radius: 15px;
-    animation: bounceAnimation 3s ease-in-out infinite;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin: 50px;
+    display: inline-block;
+    outline: 1px solid transparent;
+
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-name: bounceRotate;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
 }
 
-/* Animation 3 */
-.animation3 {
-    width: 180px;
-    height: 180px;
-    background-color: #2ecc71;
-    animation: rotateAndMove 5s ease-in-out infinite;
-}
-
-/* Keyframes for Animation 1 - Circle Animation */
-@keyframes circleAnimation {
+@keyframes bounceRotate {
     0% {
         transform: rotate(0deg);
-        background-color: #3498db;
-        opacity: 1;
+        background-color: #e74c3c;
     }
+
     30% {
-        transform: rotate(90deg);
+        transform: rotate(90deg) translateY(-30px);
         background-color: #f39c12;
-        opacity: 0.7;
     }
+
     60% {
-        transform: rotate(180deg);
+        transform: rotate(180deg) translateY(15px);
         background-color: #9b59b6;
-        opacity: 0.5;
     }
+
     100% {
         transform: rotate(360deg);
-        background-color: #3498db;
-        opacity: 1;
-    }
-}
-
-/* Keyframes for Animation 2 - Bounce Animation */
-@keyframes bounceAnimation {
-    0% {
-        transform: translateY(0);
-        background-color: #e74c3c;
-    }
-    40% {
-        transform: translateY(-50px);
-        background-color: #f39c12;
-    }
-    60% {
-        transform: translateY(25px);
-        background-color: #9b59b6;
-    }
-    100% {
-        transform: translateY(0);
         background-color: #e74c3c;
     }
 }
 
-/* Keyframes for Animation 3 - Rotate and Move */
-@keyframes rotateAndMove {
+/* Animation 3: Move, Scale, and Color Change */
+.c_box {
+    text-align: center;
+    font-size: 20px;
+    color: #FFF;
+    background-color: #2ecc71;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin: 50px;
+    display: inline-block;
+    outline: 1px solid transparent;
+
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    animation-name: moveScale;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes moveScale {
     0% {
-        transform: rotate(0deg) translateX(0);
+        transform: translateX(0px) scale(1);
         background-color: #2ecc71;
     }
-    25% {
-        transform: rotate(90deg) translateX(100px);
+
+    50% {
+        transform: translateX(200px) scale(1.5);
         background-color: #16a085;
     }
-    50% {
-        transform: rotate(180deg) translateX(200px);
-        background-color: #1abc9c;
+
+    80% {
+        transform: translateX(0px) scale(1);
+        background-color: #f39c12;
     }
-    75% {
-        transform: rotate(270deg) translateX(100px);
-        background-color: #2ecc71;
-    }
+
     100% {
-        transform: rotate(360deg) translateX(0);
+        transform: translateX(-200px) scale(1.2);
         background-color: #2ecc71;
     }
 }
